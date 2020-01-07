@@ -5,6 +5,7 @@ library(readxl)
 install.packages("dplyr")
 library(dplyr)
 
+
   #1. 원시 데이터 가져오기
 #dustdata.xlsx 파일을 dustdata에 할당
 dustdata <- read_excel("E:/R/dustdata.xlsx")
@@ -13,10 +14,12 @@ View(dustdata)
 #dustdata 속성 확인
 str(dustdata)
 
+
   #2. 비교할 지역 데이터만 추출하기
 #성북구와 중구 데이터만 추출 및 확인
 dustdata_anal <- dustdata %>% filter(area %in% c("성북구", "중구"))
 View(dustdata_anal)
+
 
   #3. 데이터 현황 파악하기
 #dustdata_anal의 yyyymmdd에 따른 데이터 수 파악
@@ -40,6 +43,7 @@ library(psych)
 describe(dust_anal_area_sb$finedust)
 #중구의 미세먼지량에 대한 기초 통계량 도출
 describe(dust_anal_area_jg$finedust)
+
 
   #4. 분포 확인 및 가설 검정
 #성북구와 중구의 미세먼지 농도에 대해 boxplot을 통해 분포 차이 확인
